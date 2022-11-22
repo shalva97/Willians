@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="kmm-jvm">
+    <output-path>$PROJECT_DIR$/kmm/build/libs</output-path>
+    <root id="archive" name="kmm-jvm.jar">
+      <element id="module-output" name="Willians.kmm.jvmMain" />
+    </root>
+  </artifact>
+</component>
