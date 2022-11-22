@@ -1,6 +1,5 @@
 plugins {
     kotlin("multiplatform") version "1.8.0-Beta"
-    application
 }
 
 repositories {
@@ -24,11 +23,14 @@ kotlin {
     jvm()
     linuxArm64()
 
+    macosX64 {
+        binaries {
+            executable {
+                entryPoint = "com.github.shalva97.main"
+            }
+        }
+    }
     sourceSets {
         val commonMain by getting
     }
-}
-
-application {
-    mainClass.set("MainKt")
 }
