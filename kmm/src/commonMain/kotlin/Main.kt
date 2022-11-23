@@ -1,22 +1,26 @@
 package com.github.shalva97
 
+import com.ionspin.kotlin.bignum.integer.BigInteger
+import com.ionspin.kotlin.bignum.integer.toBigInteger
+
+//fun main1() {
+//    (1..20).mapNotNull {
+//        if( primeNumber(it).takeIf { (it%1f) == 0f } != null) {
+//            it
+//        } else null
+//    }.println()
+//}
+
 fun main() {
-    (1..20).mapNotNull {
-        if( primeNumber(it).takeIf { (it%1f) == 0f } != null) {
-            it
-        } else null
-    }.println()
+//    BigInteger.parseString("25040013928179957760000000000000").plus(3).println()
+//    123.factorial().println()
+    37299.toBigInteger().isPrimeNumber().println()
 }
 
-fun primeNumber(j: Int): Float {
-    val factorial = (j - 1).factorial()
-    return (factorial + 1) / j.toFloat()
-}
-
-fun Number.factorial(): Long {
-    return (1..this.toLong()).fold(1) { i: Long, l: Long ->
-        return@fold l * i
-    }
+fun BigInteger.isPrimeNumber(): Boolean {
+    val factorial = (this - 1).factorial()
+    val results = (factorial + 1).divideAndRemainder(this)
+    return results.second == BigInteger.ZERO
 }
 
 fun Any?.println() {
